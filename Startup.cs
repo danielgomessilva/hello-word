@@ -15,7 +15,7 @@ namespace TCC
                               IHostingEnvironment env,
                               ILoggerFactory loggerFactory)
         {
-                app.Run(async (context) =>  await context.Response.WriteAsync("Hello, guys!"));
+                app.Run(async (context) =>  await context.Response.WriteAsync("Hello, guys again!"));
         }
     }
 }
