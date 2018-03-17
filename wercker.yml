@@ -28,3 +28,12 @@ deploy:
         repository: danielgomessilva/hello-world
         registry: https://registry.hub.docker.com
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
+push-release:
+  steps:
+    - internal/docker-push:
+        disable-sync: true
+        repository: quay.io/wercker/todo-demo-release
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        registry: quay.io
+        tag: $WERCKER_GIT_BRANCH
