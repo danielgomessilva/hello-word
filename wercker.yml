@@ -19,15 +19,6 @@ build:
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app 
           cd $WERCKER_OUTPUT_DIR/app
-deploy:
-  steps:
-    - internal/docker-push:
-        username: $USERNAME
-        password: $PASSWORD
-        tag: latest
-        repository: danielgomessilva/hello-world
-        registry: https://registry.hub.docker.com
-        entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
 push-release:
   steps:
     - internal/docker-push:
